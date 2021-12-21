@@ -1,0 +1,425 @@
+// npx sass --watch CSS/style.scss  CSS/style.css
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 200px;
+  font-family: "Roboto", sans-serif;
+}
+
+// Couleurs principales
+$primaire: #9356dc;
+$secondaire: #ff79da;
+$tertiaire: #99e2d0;
+$gris-fonce: #353535;
+
+// Entête
+header {
+  width: 100%;
+  background-color: white;
+  height: 60px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.158);
+  display: flex;
+  align-items: center;
+  div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:nth-child(1) {
+      width: 20%;
+      font-size: 20px;
+      a {
+        color: black;
+      }
+    }
+    &:nth-child(2) {
+      width: 60%;
+      img {
+        height: 70%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// Contenu de la page
+main {
+  // Barre qui affiche la localisation
+  .localisation {
+    width: 100%;
+    height: auto;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0 15px 0;
+    font-weight: bold;
+    color: $gris-fonce;
+    i {
+      margin-right: 15px;
+    }
+  }
+
+  // Section des recherche des restaurants
+  .explore {
+    width: 100%;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0 40px 0;
+    h1 {
+      width: 70%;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    p {
+      width: 80%;
+      text-align: center;
+      color: #4d4d4d;
+      margin-bottom: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 30px;
+      background: rgb(255, 121, 218);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 121, 218, 1) 0%,
+        rgba(147, 86, 220, 1) 100%
+      );
+    }
+  }
+
+  // Section d'explication du fonctionnement du site
+  .fonctionnement {
+    width: 100%;
+    padding: 40px 20px 40px 20px;
+    h2 {
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+    .languetteFonctionnementContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      :last-child {
+        margin-bottom: 0px;
+      }
+      .languetteFonctionnement {
+        border-radius: 20px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.158);
+        position: relative;
+        padding: 25px 0 25px 40px;
+        display: flex;
+        align-items: center;
+        width: 95%;
+        margin-bottom: 25px;
+        &:active {
+          background-color: #f5edff;
+        }
+        &:active :nth-child(2) {
+          color: $primaire;
+        }
+        :nth-child(1) {
+          background-color: $primaire;
+          color: white;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          position: absolute;
+          left: -10px;
+        }
+        :nth-child(2) {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          font-size: 20px;
+          font-weight: bold;
+          color: #7e7e7e;
+          margin-right: 20px;
+        }
+        :nth-child(3) {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          font-size: 17px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // Section de proposition des différents restaurants
+  .restaurantsList {
+    width: 100%;
+    padding: 40px 20px 40px 20px;
+    background-color: #f6f6f6;
+    h2 {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .carteListRestaurant {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.158);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-bottom: 20px;
+      position: relative;
+      a {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        z-index: 10;
+      }
+      .imageListResto {
+        height: 130px;
+        width: 100%;
+        position: relative;
+        .etiquetteNouveau {
+          position: absolute;
+          background-color: $tertiaire;
+          color: #008766;
+          padding: 8px 10px;
+          border-radius: 3px;
+          top: 10px;
+          right: 10px;
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        }
+      }
+      .infosListResto {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px 15px 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        .infosListRestoLeft {
+          :nth-child(1) {
+            font-weight: bold;
+          }
+        }
+        .infosListRestoRight {
+          font-size: 20px;
+          z-index: 11;
+          pointer-events: all;
+          i {
+            z-index: 11;
+          }
+          i:nth-child(2) {
+            display: none;
+          }
+          i:nth-child(1):active {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // page détaillée de chaque restaurant
+  .menuContainer {
+    width: 100%;
+    padding-top: 210px;
+    position: relative;
+    z-index: 1;
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+      object-fit: cover;
+      height: 230px;
+    }
+    .menu {
+      width: 100%;
+      background-color: white;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding: 40px 20px;
+      .titreEtLikeRestaurant {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        h1 {
+          font-family: "Shrikhand", cursive;
+        }
+        :nth-child(3) {
+          display: none;
+        }
+      }
+      .partieDuMenu {
+        width: 100%;
+        margin-top: 30px;
+        h2 {
+          text-transform: uppercase;
+          font-size: 15px;
+          color: #3d3d3d;
+        }
+        .line {
+          width: 40px;
+          height: 3px;
+          background-color: $tertiaire;
+        }
+        .plat {
+          width: 100%;
+          height: 75px;
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.158);
+          border-radius: 15px;
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          .titreEtdescriptionEtPrixPlat {
+            width: 90%;
+            -webkit-transition: width 0.4s ease-in-out;
+            -moz-transition: width 0.4s ease-in-out;
+            -o-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            .titrePlat {
+              font-weight: bold;
+              font-size: 19px;
+              padding: 13px 0 0 10px;
+              line-height: 25px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+            .descriptionEtPrixPlat {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              padding: 0 0 13px 10px;
+              line-height: 25px;
+              span {
+                &:nth-child(1) {
+                  color: #3d3d3d;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                }
+                &:nth-child(2) {
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+          .choisirPlat {
+            background-color: $tertiaire;
+            color: white;
+            width: 70px;
+            height: 75px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            -webkit-transition: right 0.4s ease-in-out;
+            -moz-transition: right 0.4s ease-in-out;
+            -o-transition: right 0.4s ease-in-out;
+            transition: right 0.4s ease-in-out;
+            display: flex;
+            position: absolute;
+            right: -70px;
+          }
+          @keyframes turnAround {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+          &:hover .titreEtdescriptionEtPrixPlat {
+            width: 70%;
+          }
+          &:hover .choisirPlat i {
+            animation: 0.4s linear both running turnAround;
+          }
+          &:hover .choisirPlat {
+            right: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// pied de page
+footer {
+  height: 200px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $gris-fonce;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    h3 {
+      color: white;
+      font-family: "Shrikhand", cursive;
+      margin-bottom: 15px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      width: 100%;
+      line-height: 28px;
+      &:nth-child(2) i {
+        font-size: 12px;
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
