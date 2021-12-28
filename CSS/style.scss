@@ -14,6 +14,7 @@ html {
   height: 100%;
   width: 100%;
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 body {
@@ -64,8 +65,11 @@ header {
 
 // Contenu de la page
 main {
+  position: relative;
+
   // Barre qui affiche la localisation
   .localisation {
+    cursor: pointer;
     width: 100%;
     height: auto;
     background-color: #eaeaea;
@@ -112,6 +116,12 @@ main {
         rgba(255, 121, 218, 1) 0%,
         rgba(147, 86, 220, 1) 100%
       );
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.521);
+      transition: 0.2s;
+      &:hover {
+        box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.74);
+        background: linear-gradient(180deg, #ff8cde 0%, #9f6ddd 100%);
+      }
     }
   }
 
@@ -140,6 +150,13 @@ main {
         align-items: center;
         width: 95%;
         margin-bottom: 25px;
+        cursor: pointer;
+        &:hover {
+          background-color: #f5edff;
+        }
+        &:hover :nth-child(2) {
+          color: $primaire;
+        }
         &:active {
           background-color: #f5edff;
         }
@@ -178,79 +195,178 @@ main {
     }
   }
 
+  // responsive tablette de la section d'explication du fonctionnement du site
+  @media screen and (min-width: 768px) {
+    .fonctionnement {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        width: 90%;
+      }
+      .languetteFonctionnementContainer {
+        width: 80%;
+      }
+    }
+  }
+
+  // responsive pc de la section d'explication du fonctionnement du site
+  @media screen and (min-width: 992px) {
+    .fonctionnement {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        width: 90%;
+      }
+      .languetteFonctionnementContainer {
+        width: 60%;
+      }
+    }
+  }
+
   // Section de proposition des différents restaurants
   .restaurantsList {
     width: 100%;
     padding: 40px 20px 40px 20px;
     background-color: #f6f6f6;
-    h2 {
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-    .carteListRestaurant {
-      width: 100%;
+    .restaurantsListContainer {
       display: flex;
       flex-direction: column;
-      overflow: hidden;
-      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.158);
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      margin-bottom: 20px;
-      position: relative;
-      a {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-        color: black;
-        z-index: 10;
+      flex-wrap: wrap;
+      h2 {
+        margin-bottom: 20px;
+        font-weight: bold;
       }
-      .imageListResto {
-        height: 130px;
+      .carteListRestaurant {
         width: 100%;
-        position: relative;
-        .etiquetteNouveau {
-          position: absolute;
-          background-color: $tertiaire;
-          color: #008766;
-          padding: 8px 10px;
-          border-radius: 3px;
-          top: 10px;
-          right: 10px;
-        }
-        img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
-        }
-      }
-      .infosListResto {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px 20px 15px 15px;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.158);
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
-        .infosListRestoLeft {
-          :nth-child(1) {
-            font-weight: bold;
+        margin-bottom: 20px;
+        position: relative;
+        a {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          text-decoration: none;
+          color: black;
+          z-index: 10;
+        }
+        .imageListResto {
+          height: 130px;
+          width: 100%;
+          position: relative;
+          .etiquetteNouveau {
+            position: absolute;
+            background-color: $tertiaire;
+            color: #008766;
+            padding: 8px 10px;
+            border-radius: 3px;
+            top: 10px;
+            right: 10px;
+          }
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
           }
         }
-        .infosListRestoRight {
-          font-size: 20px;
-          z-index: 11;
-          pointer-events: all;
-          i {
+        .infosListResto {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 15px 20px 15px 15px;
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          .infosListRestoLeft {
+            :nth-child(1) {
+              font-weight: bold;
+            }
+          }
+          .infosListRestoRight {
+            font-size: 20px;
             z-index: 11;
+            pointer-events: all;
+            i {
+              z-index: 11;
+              cursor: pointer;
+            }
+            i:nth-child(2) {
+              display: none;
+              background: -webkit-linear-gradient(
+                transparent 50%,
+                #9356dc,
+                #ff79da
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-size: 300% 300%;
+              background-position: 100% 0%;
+              // animation: remplissageCoeur 1s both ease;
+            }
+            i:nth-child(1):active {
+              display: none;
+            }
+            i:nth-child(1):active + i:nth-child(2) {
+              display: block;
+              animation: remplissageCoeur 1s both ease;
+            }
+            @keyframes remplissageCoeur {
+              0% {
+                background-position: 100% 0%;
+              }
+              100% {
+                background-position: 100% 100%;
+              }
+            }
           }
-          i:nth-child(2) {
-            display: none;
-          }
-          i:nth-child(1):active {
-            display: none;
-          }
+        }
+      }
+    }
+  }
+
+  // responsive tablette de la section de proposition des différents restaurants
+  @media screen and (min-width: 768px) {
+    .restaurantsList {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        width: 80%;
+      }
+      .restaurantsListContainer {
+        width: 90%;
+        flex-direction: row;
+        justify-content: space-between;
+        .carteListRestaurant {
+          width: 49%;
+        }
+      }
+    }
+  }
+
+  // responsive pc de la section de proposition des différents restaurants
+  @media screen and (min-width: 768px) {
+    .restaurantsList {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        width: 80%;
+      }
+      .restaurantsListContainer {
+        width: 90%;
+        flex-direction: row;
+        justify-content: space-between;
+        .carteListRestaurant {
+          width: 49%;
         }
       }
     }
@@ -275,23 +391,61 @@ main {
       background-color: white;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
-      padding: 40px 20px;
+      padding: 40px 20px 70px 20px;
       .titreEtLikeRestaurant {
         width: 95%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 24px;
+
         h1 {
           font-family: "Shrikhand", cursive;
+          font-size: 23px;
+        }
+        i {
+          cursor: pointer;
+          font-size: 23px;
+        }
+        i:nth-child(2):active {
+          display: none;
+        }
+        i:nth-child(2):active + i:nth-child(3) {
+          display: block;
+          animation: remplissageCoeur 1s both ease;
         }
         :nth-child(3) {
           display: none;
+          background: -webkit-linear-gradient(
+            transparent 50%,
+            #9356dc,
+            #ff79da
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 300% 300%;
+          background-position: 100% 0%;
         }
       }
+
       .partieDuMenu {
         width: 100%;
         margin-top: 30px;
+
+        // apparition des entrées en différée de 0.3s
+        &:nth-child(2) {
+          animation: 0.4s linear 0.3s both apparition;
+        }
+        // apparition des plats en différée de 0.8s
+        &:nth-child(3) {
+          animation: 0.4s linear 0.8s both apparition;
+        }
+        // apparition des desserts en différée de 1.2s
+        &:nth-child(4) {
+          animation: 0.4s linear 1.2s both apparition;
+          margin-bottom: 50px;
+        }
+
         h2 {
           text-transform: uppercase;
           font-size: 15px;
@@ -314,7 +468,7 @@ main {
           position: relative;
           cursor: pointer;
           .titreEtdescriptionEtPrixPlat {
-            width: 90%;
+            width: 95%;
             -webkit-transition: width 0.4s ease-in-out;
             -moz-transition: width 0.4s ease-in-out;
             -o-transition: width 0.4s ease-in-out;
@@ -365,6 +519,8 @@ main {
             position: absolute;
             right: -70px;
           }
+
+          // annimation de rotation de l'icone "checked"
           @keyframes turnAround {
             from {
               transform: rotate(0deg);
@@ -374,7 +530,7 @@ main {
             }
           }
           &:hover .titreEtdescriptionEtPrixPlat {
-            width: 70%;
+            width: 75%;
           }
           &:hover .choisirPlat i {
             animation: 0.4s linear both running turnAround;
@@ -382,8 +538,144 @@ main {
           &:hover .choisirPlat {
             right: 0px;
           }
+
+          // annimation d'apparition différée des parties du menu'
+          @keyframes apparition {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 100%;
+            }
+          }
         }
       }
+      .boutonCommander {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          text-decoration: none;
+          color: white;
+          padding: 15px 25px;
+          border-radius: 30px;
+          background: #ff79da;
+          background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
+          text-align: center;
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.521);
+          transition: 0.2s;
+          &:hover {
+            box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.74);
+            background: linear-gradient(180deg, #ff8cde 0%, #9f6ddd 100%);
+          }
+        }
+      }
+    }
+  }
+
+  // responsive tablette de la page détaillée de chaque restaurant
+  @media screen and (min-width: 768px) {
+    .menuContainer {
+      .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .partieDuMenu {
+          width: 80%;
+          .plat {
+            &:hover .titreEtdescriptionEtPrixPlat {
+              width: 85%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // responsive pc de la page détaillée de chaque restaurant
+  @media screen and (min-width: 992px) {
+    .menuContainer {
+      .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .titreEtLikeRestaurant {
+          width: 80%;
+        }
+        .partieDuMenu {
+          width: 80%;
+          .plat {
+            &:hover .titreEtdescriptionEtPrixPlat {
+              width: 85%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // loading spinner
+  .loadingSpinner {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: $tertiaire;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: 0.3s linear 3s forwards running apparitionDuSpinner;
+    @keyframes apparitionDuSpinner {
+      from {
+        opacity: 100%;
+        pointer-events: all;
+      }
+      to {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    svg {
+      width: 70%;
+    }
+    .lettreSpinner {
+      opacity: 0;
+    }
+    @keyframes annimationDuSpinner {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 100%;
+      }
+    }
+    .lettreSpinner:nth-child(1) {
+      animation: 0.2s linear forwards running annimationDuSpinner;
+    }
+    .lettreSpinner:nth-child(2) {
+      animation: 0.2s linear 0.3125s forwards running annimationDuSpinner;
+    }
+    .lettreSpinner:nth-child(3) {
+      animation: 0.2s linear 0.625s forwards running annimationDuSpinner;
+    }
+    .lettreSpinner:nth-child(4) {
+      animation: 0.2s linear 0.9375s forwards running annimationDuSpinner;
+    }
+    .lettreSpinner:nth-child(5) {
+      animation: 0.2s linear 1.25s forwards running annimationDuSpinner;
+    }
+    .lettreSpinner:nth-child(6) {
+      animation: 0.2s linear 1.5625s forwards running annimationDuSpinner;
+    }
+    .lettreSpinner:nth-child(7) {
+      animation: 0.2s linear 1.875s forwards running annimationDuSpinner;
+    }
+    .lettreSpinner:nth-child(8) {
+      animation: 0.2s linear 2.1875s forwards running annimationDuSpinner;
     }
   }
 }
@@ -419,6 +711,37 @@ footer {
       }
       i {
         margin-right: 10px;
+      }
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// responsive tablette du footer
+@media screen and (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    div {
+      align-items: center;
+      h3 {
+        font-size: 35px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+// responsive pc du footer
+@media screen and (min-width: 992px) {
+  footer {
+    flex-direction: row;
+    div {
+      align-items: center;
+      h3 {
+        font-size: 35px;
+        margin-bottom: 0px;
       }
     }
   }
