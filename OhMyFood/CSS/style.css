@@ -269,30 +269,36 @@ main .restaurantsList .restaurantsListContainer .carteListRestaurant .infosListR
   font-size: 20px;
   z-index: 11;
   pointer-events: all;
+  position: relative;
 }
 main .restaurantsList .restaurantsListContainer .carteListRestaurant .infosListResto .infosListRestoRight i {
   z-index: 11;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 main .restaurantsList .restaurantsListContainer .carteListRestaurant .infosListResto .infosListRestoRight i:nth-child(2) {
   display: none;
+  pointer-events: none;
   background: -webkit-linear-gradient(transparent 50%, #9356dc, #ff79da);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 300% 300%;
   background-position: 100% 0%;
+  font-size: 17px;
+  right: 3px;
+  top: -1px;
 }
-main .restaurantsList .restaurantsListContainer .carteListRestaurant .infosListResto .infosListRestoRight i:nth-child(1):active {
-  display: none;
-}
-main .restaurantsList .restaurantsListContainer .carteListRestaurant .infosListResto .infosListRestoRight i:nth-child(1):active + i:nth-child(2) {
+main .restaurantsList .restaurantsListContainer .carteListRestaurant .infosListResto .infosListRestoRight i:nth-child(1):hover + i:nth-child(2) {
   display: block;
-  animation: remplissageCoeur 1s both ease;
+  animation: remplissageCoeur 0.3s both ease;
 }
 @keyframes remplissageCoeur {
   0% {
-    background-position: 100% 30%;
+    background-position: 100% 0%;
   }
   100% {
     background-position: 100% 100%;
@@ -360,6 +366,7 @@ main .menuContainer .menu .titreEtLikeRestaurant {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 main .menuContainer .menu .titreEtLikeRestaurant h1 {
   font-family: "Shrikhand", cursive;
@@ -368,13 +375,20 @@ main .menuContainer .menu .titreEtLikeRestaurant h1 {
 main .menuContainer .menu .titreEtLikeRestaurant i {
   cursor: pointer;
   font-size: 23px;
+  position: absolute;
+  right: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
 }
-main .menuContainer .menu .titreEtLikeRestaurant i:nth-child(2):active {
-  display: none;
+main .menuContainer .menu .titreEtLikeRestaurant i:nth-child(3) {
+  pointer-events: none;
+  pointer-events: none;
+  font-size: 19px;
+  right: 4px;
 }
-main .menuContainer .menu .titreEtLikeRestaurant i:nth-child(2):active + i:nth-child(3) {
+main .menuContainer .menu .titreEtLikeRestaurant i:nth-child(2):hover + i:nth-child(3) {
   display: block;
-  animation: remplissageCoeur 1s both ease;
+  animation: remplissageCoeur 0.3s both ease;
 }
 main .menuContainer .menu .titreEtLikeRestaurant :nth-child(3) {
   display: none;
@@ -403,11 +417,17 @@ main .menuContainer .menu .partieDuMenu h2 {
   text-transform: uppercase;
   font-size: 15px;
   color: #3d3d3d;
+  position: relative;
+  width: auto;
 }
-main .menuContainer .menu .partieDuMenu .line {
+main .menuContainer .menu .partieDuMenu h2::after {
+  content: "";
+  position: absolute;
   width: 40px;
-  height: 3px;
-  background-color: #99e2d0;
+  bottom: -7px;
+  left: 0;
+  border-bottom: 3px solid #99e2d0;
+  text-align: center;
 }
 main .menuContainer .menu .partieDuMenu .plat {
   width: 100%;

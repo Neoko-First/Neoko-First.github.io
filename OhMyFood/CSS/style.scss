@@ -293,12 +293,18 @@ main {
             font-size: 20px;
             z-index: 11;
             pointer-events: all;
+            position: relative;
             i {
               z-index: 11;
               cursor: pointer;
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translate(-50%, -50%);
             }
             i:nth-child(2) {
               display: none;
+              pointer-events: none;
               background: -webkit-linear-gradient(
                 transparent 50%,
                 #9356dc,
@@ -309,14 +315,16 @@ main {
               -webkit-text-fill-color: transparent;
               background-size: 300% 300%;
               background-position: 100% 0%;
-              // animation: remplissageCoeur 1s both ease;
+              font-size: 17px;
+              right: 3px;
+              top: -1px;
             }
-            i:nth-child(1):active {
-              display: none;
-            }
-            i:nth-child(1):active + i:nth-child(2) {
+            // i:nth-child(1):active {
+            //   display: none;
+            // }
+            i:nth-child(1):hover + i:nth-child(2) {
               display: block;
-              animation: remplissageCoeur 1s both ease;
+              animation: remplissageCoeur 0.3s both ease;
             }
             @keyframes remplissageCoeur {
               0% {
@@ -397,7 +405,7 @@ main {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
+        position: relative;
         h1 {
           font-family: "Shrikhand", cursive;
           font-size: 23px;
@@ -405,13 +413,20 @@ main {
         i {
           cursor: pointer;
           font-size: 23px;
+          position: absolute;
+          right: 0;
+          transform: translate(-50%, -50%);
+          top: 50%;
         }
-        i:nth-child(2):active {
-          display: none;
+        i:nth-child(3) {
+          pointer-events: none;
+          pointer-events: none;
+          font-size: 19px;
+          right: 4px;
         }
-        i:nth-child(2):active + i:nth-child(3) {
+        i:nth-child(2):hover + i:nth-child(3) {
           display: block;
-          animation: remplissageCoeur 1s both ease;
+          animation: remplissageCoeur 0.3s both ease;
         }
         :nth-child(3) {
           display: none;
@@ -450,11 +465,17 @@ main {
           text-transform: uppercase;
           font-size: 15px;
           color: #3d3d3d;
+          position: relative;
+          width: auto;
         }
-        .line {
+        h2::after {
+          content: "";
+          position: absolute;
           width: 40px;
-          height: 3px;
-          background-color: $tertiaire;
+          bottom: -7px;
+          left: 0;
+          border-bottom: 3px solid $tertiaire;
+          text-align: center;
         }
         .plat {
           width: 100%;
