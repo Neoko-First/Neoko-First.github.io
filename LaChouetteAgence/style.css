@@ -1089,6 +1089,26 @@ h4 {
   background-color: #ac6000 !important;
 }
 
+#bloc-6 {
+  background-color: #ac6000 !important;
+}
+
+#bloc-7 button {
+  background-color: #ac6000 !important;
+  color: white !important;
+}
+
+#bloc-6 h1 {
+  color: white !important;
+  text-align: center;
+}
+
+#bloc-6 p {
+  text-align: center;
+  color: white !important;
+  font-size: 20px;
+}
+
 #bloc-8 {
   background-color: #ac6000 !important;
 }

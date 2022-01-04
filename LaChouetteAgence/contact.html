@@ -18,7 +18,7 @@
       name="description"
       content="Agence de web design basée à Lyon, nous accompagnons nos clients dans la mise en place des supports web pour leurs activités. Nous proposons différents types de designs qui répondent aux besoins de nos clients."
     />
-	<!--Conversion favicon png en .ico-->
+    <!--Conversion favicon png en .ico-->
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 
     <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -26,7 +26,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/et-line.min.css"> -->
 
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap..css" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="./css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="./css/et-line.css" />
@@ -36,12 +36,6 @@
 	<script src="./js/blocs.min.js"></script>
 	<script src="./js/jqBootstrapValidation.js"></script>
 	<script src="./js/formHandler.js"></script> -->
-
-    <script src="./js/jquery-2.1.0.js"></script>
-    <script src="./js/bootstrap.js"></script>
-    <script src="./js/blocs.js"></script>
-    <script src="./js/jqBootstrapValidation.js"></script>
-    <script src="./js/formHandler.js"></script>
 
     <!-- Analytics -->
 
@@ -115,16 +109,41 @@
 
       <!-- bloc-7 -->
       <div class="bloc bgc-white l-bloc" id="bloc-7">
-        <div class="container bloc-lg">
+        <div
+          class="container bloc-lg"
+          style="display: flex; justify-content: center"
+        >
           <div class="row">
             <div class="col-sm-6">
-              <form id="form_1" novalidate>
+              <form
+                id="form_1"
+                novalidate
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
                 <!--success-msg="Your message has been sent." fail-msg="Sorry it seems that our mail server is not responding, Sorry for the inconvenience!"-->
-                <div class="form-group">
+                <div
+                  class="form-group"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                  "
+                >
                   <label> Nom </label>
                   <input id="name" class="form-control" required />
                 </div>
-                <div class="form-group">
+                <div
+                  class="form-group"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                  "
+                >
                   <label> Adresse email </label>
                   <input
                     id="email"
@@ -133,7 +152,14 @@
                     required
                   />
                 </div>
-                <div class="form-group">
+                <div
+                  class="form-group"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                  "
+                >
                   <label> Comment nous avez-vous connu ? </label>
                   <input
                     class="form-control"
@@ -142,7 +168,14 @@
                     id="input_504"
                   />
                 </div>
-                <div class="form-group">
+                <div
+                  class="form-group"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                  "
+                >
                   <label>
                     Brief de votre projet (Ajoutez autant de détails que
                     nécessaire)<br /> </label
@@ -151,7 +184,8 @@
                     class="form-control"
                     rows="4"
                     cols="50"
-                    required
+                    required;
+                    style="resize: vertical"
                   ></textarea>
                 </div>
                 <button
@@ -163,7 +197,7 @@
               </form>
             </div>
             <div class="col-sm-6">
-              <p>
+              <p style="font-size: 15px; text-align: center">
                 contact@lachouetteagence.com<br />2 place Sathonay 69001 Lyon<br />Ouvert
                 de 9h à 18h, du lundi au vendredi<br />
               </p>
@@ -184,34 +218,50 @@
         <div class="container bloc-sm">
           <div class="row">
             <div class="col-sm-12">
-              <p class="text-center white">
+              <p class="text-center white" style="text-align: center">
                 La chouette agence - Agence web basée à Lyon.<br />
               </p>
               <div class="row row-no-gutters social">
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a class="social" href="index.html"
+                    <a
+                      class="social"
+                      href="index.html"
+                      alt="twitter"
+                      title="Twitter"
                       ><span class="fa fa-twitter icon-md"></span
                     ></a>
                   </div>
                 </div>
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a class="social" href="index.html"
+                    <a
+                      class="social"
+                      href="index.html"
+                      alt="facebook"
+                      title="Facebook"
                       ><span class="fa fa-facebook icon-md"></span
                     ></a>
                   </div>
                 </div>
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a class="social" href="index.html"
+                    <a
+                      class="social"
+                      href="index.html"
+                      alt="dribbble"
+                      title="Dribbble"
                       ><span class="fa fa-dribbble icon-md"></span
                     ></a>
                   </div>
                 </div>
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a class="social" href="index.html"
+                    <a
+                      class="social"
+                      href="index.html"
+                      alt="instagram"
+                      title="Instagram"
                       ><span class="fa fa-instagram icon-md"></span
                     ></a>
                   </div>
@@ -224,5 +274,10 @@
       <!-- Footer - bloc-8 END -->
     </div>
     <!-- Principal conteneur END -->
+    <script src="./js/jquery-2.1.0.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/blocs.js"></script>
+    <script src="./js/jqBootstrapValidation.js"></script>
+    <script src="./js/formHandler.js"></script>
   </body>
 </html>
