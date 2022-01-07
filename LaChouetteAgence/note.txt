@@ -1,0 +1,2 @@
+- faire une petite démonstration du site (parler du focusable)
+- essayer d'avoir un full orange et full vert sur lighthouse
