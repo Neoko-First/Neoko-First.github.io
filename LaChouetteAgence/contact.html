@@ -6,40 +6,37 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+
+    <!-- Ajout d'un titre de page plus cohérent -->
     <title>
-      La chouette agence | Des créateurs à votre service | Site web moderne |
-      Contact
+      La chouette agence | Contactez-nous
     </title>
+
+    <!-- Ajout de mots suplémentaires plus pertinents -->
     <meta
       name="keywords"
       content="La chouette agence, Entreprise webdesign Lyon, web, site web, web agency, confection de site web, Lyon, design identité visuelle, web design, agence web creative, concepteur de sites web, agence créative, contact"
     />
+
+    <!-- Ajout d'une dscription de page -->
     <meta
       name="description"
       content="Agence de web design basée à Lyon, nous accompagnons nos clients dans la mise en place des supports web pour leurs activités. Nous proposons différents types de designs qui répondent aux besoins de nos clients."
     />
-    <!--Conversion favicon png en .ico-->
+
+    <!-- Conversion favicon png en .ico -->
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 
-    <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/et-line.min.css"> -->
-
+    <!-- Minification des fichier css -->
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="./css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="./css/et-line.css" />
-
-    <!-- <script src="./js/jquery-2.1.0.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/blocs.min.js"></script>
-	<script src="./js/jqBootstrapValidation.js"></script>
-	<script src="./js/formHandler.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/et-line.min.css" />
 
     <!-- Analytics -->
 
     <!-- Analytics END -->
+    
   </head>
   <body>
     <!-- Principal conteneur -->
@@ -186,11 +183,12 @@
                     class="form-control"
                     rows="4"
                     cols="50"
-                    required;
+                    required
                     style="resize: vertical"
                   ></textarea>
                 </div>
                 <button
+                  tabindex=""
                   class="bloc-button btn btn-lg btn-block cta-hero btn-atomic-tangerine"
                   type="submit"
                 >
@@ -226,44 +224,28 @@
               <div class="row row-no-gutters social">
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a
-                      class="social"
-                      href="index.html"
-                      alt="twitter"
-                      title="Twitter"
+                    <a class="social" href="index.html" title="Twitter"
                       ><span class="fa fa-twitter icon-md"></span
                     ></a>
                   </div>
                 </div>
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a
-                      class="social"
-                      href="index.html"
-                      alt="facebook"
-                      title="Facebook"
+                    <a class="social" href="index.html" title="Facebook"
                       ><span class="fa fa-facebook icon-md"></span
                     ></a>
                   </div>
                 </div>
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a
-                      class="social"
-                      href="index.html"
-                      alt="dribbble"
-                      title="Dribbble"
+                    <a class="social" href="index.html" title="Dribbble"
                       ><span class="fa fa-dribbble icon-md"></span
                     ></a>
                   </div>
                 </div>
                 <div class="col-sm-3">
                   <div class="text-center">
-                    <a
-                      class="social"
-                      href="index.html"
-                      alt="instagram"
-                      title="Instagram"
+                    <a class="social" href="index.html" title="Instagram"
                       ><span class="fa fa-instagram icon-md"></span
                     ></a>
                   </div>
@@ -276,6 +258,8 @@
       <!-- Footer - bloc-8 END -->
     </div>
     <!-- Principal conteneur END -->
+
+    <!-- Chargement des scripts à la fin du chargement global de la page -->
     <script src="./js/jquery-2.1.0.js"></script>
     <script src="./js/bootstrap.js"></script>
     <script src="./js/blocs.js"></script>
